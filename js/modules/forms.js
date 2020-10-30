@@ -1,22 +1,13 @@
-function forms() {
-    const forms = document.querySelectorAll('form');
+import {modalClose, modalShow} from './modal.js';
+import {postData} from '../services/services.js';
+
+function forms(formSelector) {
+    const forms = document.querySelectorAll(formSelector);
 
     const message = {
         loading: 'img/form/spinner.svg',
         success: 'Спасибо! Мы скоро свяжемся с вами.',
         failure: 'Что-то пошло не так!'
-    };
-
-    const postData = async (url, data) => {
-        const res = await fetch(url, {
-            method: "POST",
-            headers: {
-                'Content-type': 'application/json'
-            },
-            body: data
-        });
-
-        return await res.json();
     };
 
     const bindPostData = (form) => {
@@ -53,10 +44,11 @@ function forms() {
     });
 
     const showThanksModal = (m) => {
-        const prevModalDialog = document.querySelector('.modal__dialog');
+        const prevModalDialog = document.querySelector('.modal__dialog'),
+              modal = document.querySelector('.modal');
 
         prevModalDialog.classList.add('hide');
-        modalShow();
+        modalShow('.modal');
 
         const thanksModal = document.createElement('div');
         thanksModal.classList.add('modal__dialog');
@@ -72,9 +64,9 @@ function forms() {
             thanksModal.remove();
             prevModalDialog.classList.add('show');
             prevModalDialog.classList.remove('hide');
-            modalClose('close');
+            modalClose('.modal', 'close');
         }, 4000);
     };
 }
 
-module.exports = forms;
+export default forms;

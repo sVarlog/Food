@@ -1,12 +1,12 @@
-function slider() {
-    let slider = document.querySelector('.offer__slider'),
-        sliderItems = slider.querySelectorAll('.offer__slide'),
-        currentNum = slider.querySelector('#current'),
-        total = slider.querySelector('#total'),
-        prev = slider.querySelector('.offer__slider-prev'),
-        next = slider.querySelector('.offer__slider-next'),
-        sliderInner = slider.querySelector('.offset__slider-inner'),
-        sliderWidth = slider.querySelector('.offer__slider-wrapper').clientWidth,
+function slider({container, slide, nextArrow, prevArrow, totalCounter, currentCounter, wrapper, field}) {
+    let slider = document.querySelector(container),
+        sliderItems = slider.querySelectorAll(slide),
+        currentNum = slider.querySelector(currentCounter),
+        total = slider.querySelector(totalCounter),
+        prev = slider.querySelector(prevArrow),
+        next = slider.querySelector(nextArrow),
+        sliderInner = slider.querySelector(field),
+        sliderWidth = slider.querySelector(wrapper).clientWidth,
         step = 0;
 
     sliderInner.style.width = `${sliderItems.length * 100}%`;
@@ -98,4 +98,4 @@ function slider() {
     });
 }
 
-module.exports = slider;
+export default slider;
