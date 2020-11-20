@@ -3296,6 +3296,7 @@ body.modalActive {
   top: 0;
   transition: 0.5s;
   max-height: 450px;
+  height: 450px;
 }
 .section1 .container .tabs .tabContent.active {
   opacity: 1;

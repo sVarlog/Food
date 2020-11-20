@@ -737,9 +737,9 @@ var animation = function animation() {
     var dir;
 
     if (item.classList.contains('animLeft')) {
-      dir = "translateX(-225%)";
+      dir = "translateX(-100vw)";
     } else if (item.classList.contains('animRight')) {
-      dir = "translateX(225%)";
+      dir = "translateX(100vw)";
     }
 
     new Promise(function (resolve, reject) {
