@@ -1,0 +1,46 @@
+.customSlider {
+    position: relative
+}
+
+.customSlider .sliderWrapp {
+    overflow: hidden;
+    width: auto;
+    margin: auto
+}
+
+.customSlider .sliderWrapp .sliderInner {
+    display: flex
+}
+
+.customSlider .sliderWrapp .sliderInner .item {
+    width: 100%
+}
+
+.customSlider .sliderWrapp .sliderInner .item img {
+    width: 100%;
+    height: 100%
+}
+
+.customSlider .dots {
+    position: absolute;
+    width: calc(100% - 30px);
+    bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.customSlider .dots .dot {
+    width: 25px;
+    height: 4px;
+    background: #fff;
+    opacity: .2;
+    margin-top: 7px;
+    margin-left: 7px;
+    cursor: pointer;
+    transition: .7s
+}
+
+.customSlider .dots .dot.active {
+    opacity: 1
+}

@@ -1,0 +1,74 @@
+.customSlider{
+    position: relative;
+
+    @media screen and @breakpoint{
+        max-width: calc(100% - 30px);
+        padding: 0;
+        margin: auto;
+    }
+    
+    & .arrows{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-bottom: 15px;
+        cursor: pointer;
+
+        @media screen and @breakpoint-lg{
+            margin-bottom: 10px;
+        }
+
+        @media screen and @breakpoint-md{
+            justify-content: center;
+        }
+
+        & button{
+            background: transparent;
+            border: 0;
+            cursor: pointer;
+        }
+
+        & #curr{
+            margin-left: 15px;
+            font-size: 48px;
+            font-weight: 700;
+        }
+        & #total{
+            margin-right: 15px;
+            font-size: 24px;
+        }
+    }
+
+    & .sliderWrapp{
+        overflow: hidden;
+        & .sliderInner{
+            & .item{
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    & .dots{
+        position: absolute;
+        bottom: 15px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        & .dot{
+            width: 30px;
+            height: 6px;
+            background: #fff;
+            opacity: .3;
+            margin-left: 2px;
+            margin-right: 2px;
+
+            &.active{
+                opacity: 1;
+            }
+        }
+    }
+}

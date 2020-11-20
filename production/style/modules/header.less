@@ -1,0 +1,162 @@
+.header {
+    transition: .5s;
+
+    @media screen and @breakpoint-lg {
+        width: auto;
+    }
+
+    & ul.menu {
+        display: flex;
+        margin-left: 75px;
+
+        @media screen and @breakpoint-lg {
+            margin-left: 55px;
+        }
+
+        @media screen and @breakpoint-md{
+            margin-left: 40px;
+        }
+
+        @media screen and @breakpoint{
+            margin-left: auto;
+        }
+
+        & li {
+            display: flex;
+            align-items: center;
+
+            & a {
+                font-weight: 700;
+                color: @linkColor;
+                position: relative;
+
+                @media screen and @breakpoint-md{
+                    font-size: 14px;
+                }
+                
+                @media screen and @breakpoint{
+                    font-size: 12px;
+                }
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    z-index: -1;
+                    width: 110%;
+                    left: -5%;
+                    bottom: -2px;
+                    height: 8px;
+                    background: @green;
+
+                    @media screen and @breakpoint-md{
+                        width: 90%;
+                        left: 5%;
+                    }
+                }
+            }
+        }
+
+        & li:nth-child(2) {
+            & a {
+                margin-left: 35px;
+
+                @media screen and @breakpoint-md{
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+
+    & .logo{
+        transition: .5s;
+
+        @media screen and @breakpoint-md {
+            & img {
+                width: 70px;
+                height: auto;
+            }
+        }
+    }
+
+    & .open-modal {
+        .modalBtn(#fff, #000);
+
+        @media screen and @breakpoint{
+            font-size: 12px;
+            padding: 7px;
+            margin-left: 0;
+        }
+    }
+
+    @media screen and @breakpoint{
+        overflow: hidden;
+        justify-content: space-between;
+
+        & .mobileMenuWrapp{
+            display: flex;
+            transition: .5s;
+            transform: translateX(400px);
+            width: 0;
+
+            &.active{
+                width: 100%;
+                transform: translateX(0);
+            }
+
+            & .menu{
+                margin-right: auto;
+            }
+        }
+
+        & .menuBtn{
+            margin-left: auto;
+
+            & span{
+                width: 20px;
+                height: 2px;
+                background: #000;
+                display: block;
+                position: relative;
+                transition: .5s;
+
+                &:before {
+                    content: '';
+                    width: 100%;
+                    height: 2px;
+                    background: #000;
+                    position: absolute;
+                    top: 5px;
+                    transition: .5s;
+                }
+
+                &:after {
+                    content: '';
+                    width: 100%;
+                    height: 2px;
+                    background: #000;
+                    position: absolute;
+                    top: -5px;
+                    transition: .5s;
+                }
+            }
+
+            &.active{
+                & span{
+                    &:before{
+                        width: 50%;
+                        right: 0;
+                        top: -4px;
+                        transform: rotate(45deg);
+                    }
+
+                    &:after{
+                        width: 50%;
+                        right: 0;
+                        top: 4px;
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
+    }
+}

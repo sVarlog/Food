@@ -1,0 +1,49 @@
+.footer {
+    background: @linkColor;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    & a,
+    & h3 {
+        color: #fff;
+        font-weight: 400;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    & h3 {
+        font-size: 20px;
+    }
+
+    & a {
+        font-size: 16px;
+    }
+
+    @media screen and @breakpoint {
+        & .row {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            & .center {
+                order: 1;
+            }
+
+            & .left {
+                order: 2;
+                justify-content: center;
+                text-align: center;
+            }
+
+            & .right {
+                order: 3;
+                justify-content: center;
+                text-align: center;
+
+                & a {
+                    margin: 5px auto;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,73 @@
+@import "customGrid.less";
+@import "./modules/mixins.less";
+@import "vars.less";
+
+*,body{margin: 0;padding: 0;font-family: 'Roboto', sans-serif;}
+body{overflow-x: hidden;position: relative;}
+h1,h2,h3,h4,h5,h5,p,span,div{margin: 0;padding: 0;}
+a,li,ul,button{margin: 0;padding: 0;text-decoration: none;outline: none;list-style: none;}
+
+body.modalActive{
+    overflow: hidden;
+}
+
+.socials{
+    position: fixed;
+    left: 60px;
+    bottom: 60px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    transform: rotate(-90deg);
+    transform-origin: 14px 11px;
+
+    @media screen and @breakpoint-md{
+        left: 10px;
+        bottom: 10px;
+    }
+
+    & .icons{
+        display: flex;
+
+        & a{
+            transform: rotate(90deg);
+            margin-right: 10px;
+        }
+
+        & img{
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    & .line{
+        height: 1px;
+        width: 125px;
+        background: @black;
+        margin-right: 30px;
+        margin-left: 10px;
+    }
+
+    & .text{
+        font-weight: 700;
+        font-size: 14px;
+    }
+}
+
+.sectionLine{
+    max-width: 330px;
+    height: 1px;
+    margin: auto;
+    background: @gray;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+@import "./modules/section1.less";
+@import "./modules/section2.less";
+@import "./modules/section3.less";
+@import "./modules/section4.less";
+@import "./modules/section5.less";
+@import "./modules/stock.less";
+@import "./modules/footer.less";
+@import "./modules/modals.less";

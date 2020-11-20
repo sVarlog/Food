@@ -1,0 +1,95 @@
+.modal{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.25);
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    z-index: -1;
+    transition: .75s;
+
+    &.active{
+        z-index: 100;
+        opacity: 1;
+    }
+    
+    & .modalContent{
+        width: 50%;
+        height: 50%;
+        background: #fff;
+        padding: 20px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            & h3{
+                font-size: 20px;
+                margin-bottom: 15px;
+                text-align: center;
+                font-weight: 400;
+            }
+
+            & input{
+                box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+                width: 100%;
+                margin-bottom: 10px;
+                border: 1px solid rgba(0,0,0,.1);
+                outline: none;
+                text-align: center;
+                height: 40px;
+                max-width: 250px;
+            }
+
+            & button{
+                .modalBtn(#303030, #fff);
+                width: 100%;
+                margin: 0;
+                height: 40px;
+                max-width: 250px;
+            }
+        }
+
+        & .modalClose{
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+            &:before{
+                content: '';
+                width: 100%;
+                height: 2px;
+                background: #000;
+                transform: rotate(45deg);
+                display: block;
+                position: absolute;
+            }
+
+            &:after{
+                content: '';
+                width: 100%;
+                height: 2px;
+                background: #000;
+                transform: rotate(-45deg);
+                display: block;
+                position: absolute;
+            }
+        }
+    }
+}

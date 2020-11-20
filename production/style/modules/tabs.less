@@ -1,0 +1,182 @@
+.tabs{
+    margin-top: 70px;
+    background: #fff;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, .25);
+    width: 100%;
+    display: flex;
+    position: relative;
+
+    @media screen and @breakpoint-lg{
+        margin-top: 40px;
+        flex-wrap: wrap;
+    }
+
+    @media screen and @breakpoint-md{
+        margin-top: 20px;
+    }
+
+    & .tabContent{
+        width: 75%;
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: .5s;
+        max-height: 450px;
+
+        &.active{
+            opacity: 1;
+            position: relative;
+            max-height: 450px;
+        }
+
+        @media screen and @breakpoint-lg{
+            width: 70%;
+        }
+
+        @media screen and @breakpoint{
+            width: 100%;
+        }
+    }
+
+    & .tabContent img{
+        width: 100%;
+        height: 100%;
+    }
+
+    & .tabHeader{
+        width: 25%;
+        padding: 30px 20px;
+
+        @media screen and @breakpoint-lg{
+            width: 30%;
+            padding: 10px;
+        }
+
+        @media screen and @breakpoint{
+            width: 100%;
+        }
+
+        & h3{
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 30px;
+
+            @media screen and @breakpoint-lg{
+                margin-bottom: 10px;
+            }
+
+            @media screen and @breakpoint{
+                text-align: center;
+            }
+        }
+
+        & .tabsNavigation{
+            position: relative;
+            padding-left: 15px;
+
+            @media screen and @breakpoint-md{
+                padding-left: 10px;
+            }
+
+            & .navItem{
+                font-size: 18px;
+                font-weight: 300;
+                margin-bottom: 10px;
+                color: @lightGray;
+                cursor: pointer;
+                font-weight: 300;
+                color: @gray;
+
+                @media screen and @breakpoint-lg {
+                    font-size: 16px;
+                    margin-bottom: 5px;
+                }
+
+                @media screen and @breakpoint-md{
+                    font-size: 14px;
+                }
+
+                &.active {
+                    font-size: 22px;
+                    font-weight: 700;
+                    color: @black;
+
+                    @media screen and @breakpoint-md{
+                        font-size: 20px;
+                    }
+
+                    @media screen and @breakpoint-md{
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            &:before{
+                content: '';
+                height: 100%;
+                width: 1px;
+                background: @black;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
+    }
+
+    & .tabDescr{
+        & .descr {
+            position: absolute;
+            bottom: -110px;
+            right: 110px;
+            width: 550px;
+            padding: 50px;
+            background: @yellow;
+            opacity: 0;
+            transition: .5s;
+            display: none;
+
+            &.active{
+                opacity: 1;
+                display: block;
+            }
+
+            & p {
+                font-size: 24px;
+                font-weight: 300;
+                line-height: 36px;
+            }
+
+            @media screen and @breakpoint-xl {
+                padding: 30px;
+                right: 50px;
+
+                & p {
+                    font-size: 20px;
+                    line-height: 25px;
+                }
+            }
+            @media screen and @breakpoint-lg{
+                position: relative;
+                width: 100%;
+                right: 0;
+                bottom: 0;
+            }
+
+            @media screen and @breakpoint-md{
+                padding: 15px;
+
+                & p{
+                    font-size: 14px;
+                    line-height: 18px;
+                }
+            }
+
+            @media screen and @breakpoint{
+                & p{
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

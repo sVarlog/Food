@@ -1,0 +1,95 @@
+.section4{
+    & h2{
+        font-size: 36px;
+        font-weight: 400;
+        margin-top: 30px;
+        margin-bottom: 40px;
+
+        @media screen and @breakpoint-lg{
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+    }
+    
+    & .cards{
+        height: 90%;
+        background: #FDFEDD;
+        padding-top: 50px;
+        padding-bottom: 50px;
+
+        @media screen and @breakpoint-lg{
+            padding-top: 10px;
+            padding-bottom: 20px;
+        }
+
+        & .cardItem{
+            background: #fff;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, .25);
+            max-width: 320px;
+            width: 31%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            @media screen and @breakpoint-md{
+                width: 80%;
+                max-width: none;
+                margin: auto;
+                margin-bottom: 15px;
+            }
+
+            & .cardHead img{
+                width: 100%;
+                height: 190px;
+
+                @media screen and @breakpoint-lg{
+                    height: 150px;
+                }
+
+                @media screen and @breakpoint-md{
+                    height: auto;
+                }
+            }
+
+            & .cardBody{
+                padding: 20px;
+                height: 100%;
+
+                & h3{
+                    font-size: 18px;
+                    font-weight: 700;
+                    margin-bottom: 20px;
+                }
+
+                & p{
+                    font-size: 16px;
+                }
+
+                @media screen and @breakpoint-lg {
+                    padding: 10px;
+
+                    & h3{
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+
+            & .cardFooter{
+                border-top: 1px solid rgba(0,0,0,.25);
+                padding: 15px 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                & span.price{
+                    font-weight: 700;
+                    font-size: 24px;
+                }
+
+                @media screen and @breakpoint-lg{
+                    padding: 5px 10px;
+                }
+            }
+        }
+    }
+}

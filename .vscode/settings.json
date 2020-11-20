@@ -1,0 +1,8 @@
+{
+    "compile-hero.disable-compile-files-on-did-save-code": false,
+    "compile-hero.jade-output-toggle": false,
+    "compile-hero.javascript-output-toggle": false,
+    "compile-hero.less-output-directory": "../dist/style",
+    "compile-hero.generate-minified-css": true,
+    "git.ignoreLimitWarning": true
+}
